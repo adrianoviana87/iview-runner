@@ -1,18 +1,27 @@
 #include "ofApp.h"
 
+#include "layers/image/AppImageLayer.h"
+
 //--------------------------------------------------------------
 void ofApp::setup(){
-
+  mLayers.push_back(make_shared<AppImageLayer>());
+  for (auto& layer : mLayers) {
+    layer->setup();
+  }
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+  for (auto& layer : mLayers) {
+    layer->update();
+  }
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+  for (auto& layer : mLayers) {
+    layer->draw();
+  }
 }
 
 //--------------------------------------------------------------

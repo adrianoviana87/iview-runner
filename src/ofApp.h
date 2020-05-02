@@ -2,8 +2,14 @@
 
 #include "ofMain.h"
 
-class ofApp : public ofBaseApp{
+#include <memory>
+#include <vector>
 
+#include "layers/AppLayer.h"
+
+class ofApp : public ofBaseApp{
+	private:
+		vector<shared_ptr<AppLayer>> mLayers;
 	public:
 		void setup();
 		void update();
