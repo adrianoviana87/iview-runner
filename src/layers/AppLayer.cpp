@@ -1,13 +1,36 @@
 #include "AppLayer.h"
 
-void AppLayer::draw() {
+void AppLayer::mouseMoved(int x, int y)
+{
   // nothing
 }
 
-void AppLayer::update() {
+void AppLayer::mousePressed(int x, int y, int button)
+{
   // nothing
 }
 
-void AppLayer::setup() {
+void AppLayer::mouseReleased(int x, int y, int button)
+{
+  // nothing
+}
+
+void AppLayer::onActivated(const ofVec3f &point)
+{
+  // nothing
+}
+
+void AppLayer::draw()
+{
+  // nothing
+}
+
+void AppLayer::update()
+{
+  // nothing
+}
+
+void AppLayer::setup()
+{
   // nothing
 }

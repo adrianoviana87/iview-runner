@@ -2,10 +2,12 @@
 
 #include "ofAppRunner.h"
 
-void AppImageLayer::setup() {
+void AppImageLayer::setup()
+{
   mImage.load("./placeholder.png");
 }
 
-void AppImageLayer::draw() {
+void AppImageLayer::draw()
+{
   mImage.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
 }
