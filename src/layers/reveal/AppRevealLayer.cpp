@@ -5,11 +5,13 @@
 #include "ofAppRunner.h"
 #include "ofGraphics.h"
 
+#include "../../image-loader/AppImageLoader.h"
+
 using namespace std;
 
 void AppRevealLayer::setup()
 {
-  mImage.load("sample.jpg");
+  AppImageLoader::instance()->loadImage(mImage, "https://source.unsplash.com/user/erondu/" + std::to_string(ofGetWindowWidth()) + "x" + std::to_string(ofGetWindowHeight()));
   mBrush.load("brush.png");
 
   int width = ofGetWindowWidth();

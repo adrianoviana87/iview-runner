@@ -34,3 +34,8 @@ void AppLayer::setup()
 {
   // nothing
 }
+
+AppLayer::~AppLayer()
+{
+  // nothing
+}

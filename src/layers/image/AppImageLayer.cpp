@@ -2,9 +2,11 @@
 
 #include "ofAppRunner.h"
 
+#include "../../image-loader/AppImageLoader.h"
+
 void AppImageLayer::setup()
 {
-  mImage.load("./placeholder.png");
+  AppImageLoader::instance()->loadImage(mImage, "https://source.unsplash.com/random");
 }
 
 void AppImageLayer::draw()
