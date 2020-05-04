@@ -11,7 +11,6 @@ class ofApp : public ofBaseApp
 {
 private:
 	vector<shared_ptr<AppLayer>> mLayers;
-	bool mMouseDown;
 
 public:
 	void setup();

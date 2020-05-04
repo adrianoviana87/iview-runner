@@ -13,11 +13,11 @@ private:
   ofFbo mMaskFbo;
   ofFbo mFbo;
   ofShader mShader;
-  bool mMouseDown;
+  bool mPointActive;
+  ofVec3f mPoint;
 public:
   void setup() override;
   void draw() override;
   void update() override;
-	virtual void mousePressed(int x, int y, int button);
-	virtual void mouseReleased(int x, int y, int button);
+  void onActivated(const ofVec3f &point) override;
 };

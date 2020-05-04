@@ -13,13 +13,20 @@ void ofApp::setup()
   {
     layer->setup();
   }
-
-  mMouseDown = false;
 }
 
 //--------------------------------------------------------------
 void ofApp::update()
 {
+  if (ofGetMousePressed())
+  {
+    ofVec3f mousePoint(ofGetMouseX(), ofGetMouseY());
+    for (auto &layer : mLayers)
+    {
+      layer->onActivated(mousePoint);
+    }
+  }
+
   for (auto &layer : mLayers)
   {
     layer->update();
@@ -49,17 +56,6 @@ void ofApp::keyReleased(int key)
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y)
 {
-  for (auto &layer : mLayers)
-  {
-    layer->mouseMoved(x, y);
-    if (mMouseDown)
-    {
-      ofVec3f mousePoint(x, y);
-      {
-        layer->onActivated(mousePoint);
-      }
-    }
-  }
 }
 
 //--------------------------------------------------------------
@@ -70,22 +66,11 @@ void ofApp::mouseDragged(int x, int y, int button)
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button)
 {
-  mMouseDown = true;
-  for (auto &layer : mLayers)
-  {
-    layer->mousePressed(x, y, button);
-  }
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button)
 {
-  for (auto &layer : mLayers)
-  {
-    layer->mouseReleased(x, y, button);
-  }
-
-  mMouseDown = false;
 }
 
 //--------------------------------------------------------------

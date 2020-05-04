@@ -7,16 +7,6 @@
 
 using namespace std;
 
-void AppRevealLayer::mousePressed(int x, int y, int button)
-{
-  mMouseDown = true;
-}
-
-void AppRevealLayer::mouseReleased(int x, int y, int button)
-{
-  mMouseDown = false;
-}
-
 void AppRevealLayer::setup()
 {
   mImage.load("sample.jpg");
@@ -100,7 +90,13 @@ void AppRevealLayer::setup()
   mFbo.begin();
   ofClear(0, 0, 0, 255);
   mFbo.end();
-  mMouseDown = false;
+  mPointActive = false;
+}
+
+void AppRevealLayer::onActivated(const ofVec3f& point)
+{
+  mPoint = point;
+  mPointActive = true;
 }
 
 void AppRevealLayer::update()
@@ -108,9 +104,10 @@ void AppRevealLayer::update()
   // MASK (frame buffer object)
   //
   mMaskFbo.begin();
-  if (mMouseDown)
+  if (mPointActive)
   {
-    mBrush.draw(ofGetMouseX()- 25, ofGetMouseY() - 25, 50, 50);
+    mBrush.draw(mPoint.x - 25, mPoint.y - 25, 50, 50);
+    mPointActive = false;
   }
 
   mMaskFbo.end();
