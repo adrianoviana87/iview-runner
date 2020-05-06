@@ -9,9 +9,14 @@
 
 using namespace std;
 
+AppRevealLayer::AppRevealLayer(AppRevealLayerDef def)
+	: mDef(def)
+{
+}
+
 void AppRevealLayer::setup()
 {
-  AppImageLoader::instance()->loadImage(mImage, "https://source.unsplash.com/user/erondu/" + std::to_string(ofGetWindowWidth()) + "x" + std::to_string(ofGetWindowHeight()));
+  AppImageLoader::instance()->loadImage(mImage, mDef.source);
   mBrush.load("brush.png");
 
   int width = ofGetWindowWidth();

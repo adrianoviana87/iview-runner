@@ -1,10 +1,11 @@
+#include <regex>
 #include "AppImageLoader.h"
 
 std::shared_ptr<AppImageLoader> AppImageLoader::sInstance;
 
 bool looksLikeUrl(const std::string& path)
 {
-  return path.find(":") != std::string::npos;
+	return std::regex_match(path, std::regex("^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$"));
 }
 
 std::shared_ptr<AppImageLoader> AppImageLoader::instance()

@@ -3,3 +3,4 @@ ofxNetwork
 ofxOsc
 ofxThreadedImageLoader
 ofxXmlSettings
+ofxJson

@@ -1,0 +1,17 @@
+{
+  "title": "Sample Presentation",
+  "description": "Used for testing",
+  "tags": [ "test" ],
+  "layers": [
+    {
+      "title": "background",
+      "type": "image",
+      "source": "https://loremflickr.com/1024/768"
+    },
+    {
+      "title": "reveal",
+      "type": "reveal",
+      "source": "https://loremflickr.com/1024/768"
+    }
+  ]
+}

@@ -5,12 +5,12 @@
 #include <memory>
 #include <vector>
 
-#include "layers/AppLayer.h"
+#include "presentation/AppPresentation.h"
 
 class ofApp : public ofBaseApp
 {
 private:
-	vector<shared_ptr<AppLayer>> mLayers;
+	std::shared_ptr<AppPresentation> mPresentation;
 
 public:
 	void setup();

@@ -4,6 +4,7 @@
 #include "ofImage.h"
 #include "ofShader.h"
 #include "../AppLayer.h"
+#include "AppRevealLayerDef.h"
 
 class AppRevealLayer : public AppLayer
 {
@@ -15,7 +16,9 @@ private:
   ofShader mShader;
   bool mPointActive;
   ofVec3f mPoint;
+	AppRevealLayerDef mDef;
 public:
+	AppRevealLayer(AppRevealLayerDef def);
   void setup() override;
   void draw() override;
   void update() override;

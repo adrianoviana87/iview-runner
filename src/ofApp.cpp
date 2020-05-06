@@ -3,16 +3,14 @@
 #include "layers/image/AppImageLayer.h"
 #include "layers/reveal/AppRevealLayer.h"
 
+using namespace std;
+
 //--------------------------------------------------------------
 void ofApp::setup()
 {
   ofEnableAlphaBlending();
-  mLayers.push_back(make_shared<AppImageLayer>());
-  mLayers.push_back(make_shared<AppRevealLayer>());
-  for (auto &layer : mLayers)
-  {
-    layer->setup();
-  }
+	mPresentation = appBuildPresentation("sample-data/sample-presentation.json");
+	mPresentation->setup();
 }
 
 //--------------------------------------------------------------
@@ -21,26 +19,17 @@ void ofApp::update()
   if (ofGetMousePressed())
   {
     ofVec3f mousePoint(ofGetMouseX(), ofGetMouseY());
-    for (auto &layer : mLayers)
-    {
-      layer->onActivated(mousePoint);
-    }
+		mPresentation->onActivated(mousePoint);
   }
 
-  for (auto &layer : mLayers)
-  {
-    layer->update();
-  }
+	mPresentation->update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw()
 {
   ofSetColor(255, 255);
-  for (auto &layer : mLayers)
-  {
-    layer->draw();
-  }
+	mPresentation->draw();
 }
 
 //--------------------------------------------------------------

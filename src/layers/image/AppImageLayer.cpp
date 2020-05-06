@@ -4,9 +4,14 @@
 
 #include "../../image-loader/AppImageLoader.h"
 
+AppImageLayer::AppImageLayer(AppImageLayerDef def)
+  : mDef(def)
+{
+}
+
 void AppImageLayer::setup()
 {
-  AppImageLoader::instance()->loadImage(mImage, "https://source.unsplash.com/random");
+  AppImageLoader::instance()->loadImage(mImage, mDef.source);
 }
 
 void AppImageLayer::draw()
