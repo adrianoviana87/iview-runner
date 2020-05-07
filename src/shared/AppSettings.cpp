@@ -4,7 +4,11 @@
 
 #include "shared/AppSettings.h"
 
+#ifdef WIN32
 #define APP_SETTINGS_PATH "data\\settings.json"
+#else
+#define APP_SETTINGS_PATH "data/settings.json"
+#endif
 
 using namespace std;
 
