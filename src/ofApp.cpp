@@ -11,6 +11,7 @@ void ofApp::setup()
   ofEnableAlphaBlending();
 	mPresentationController.setup();
 	mPresentationController.post("sample-data/sample-presentation.json");
+	mInteractionController.setup();
 }
 
 //--------------------------------------------------------------
@@ -21,6 +22,12 @@ void ofApp::update()
     ofVec3f mousePoint(ofGetMouseX(), ofGetMouseY());
 		mPresentationController.onActivated(mousePoint);
   }
+
+	auto points = mInteractionController.getPoints();
+	for (auto& point : points)
+	{
+		mPresentationController.onActivated(point);
+	}
 
 	mPresentationController.update();
 }

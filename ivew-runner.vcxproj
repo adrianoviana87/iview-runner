@@ -202,6 +202,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\addons\ofxJSON\libs\jsoncpp\src\jsoncpp.cpp" />
     <ClCompile Include="..\..\..\addons\ofxJSON\src\ofxJSONElement.cpp" />
+    <ClCompile Include="src\controllers\AppInteractionController.cpp" />
     <ClCompile Include="src\controllers\AppPresentationController.cpp" />
     <ClCompile Include="src\image-loader\AppImageLoader.cpp" />
     <ClCompile Include="src\layers\image\AppImageLayer.cpp" />
@@ -251,6 +252,7 @@
     <ClInclude Include="..\..\..\addons\ofxJSON\libs\jsoncpp\include\json\json.h" />
     <ClInclude Include="..\..\..\addons\ofxJSON\src\ofxJSON.h" />
     <ClInclude Include="..\..\..\addons\ofxJSON\src\ofxJSONElement.h" />
+    <ClInclude Include="src\controllers\AppInteractionController.h" />
     <ClInclude Include="src\controllers\AppPresentationController.h" />
     <ClInclude Include="src\image-loader\AppImageLoader.h" />
     <ClInclude Include="src\layers\AppLayer.h" />

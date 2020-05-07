@@ -6,12 +6,13 @@
 #include <vector>
 
 #include "controllers/AppPresentationController.h"
+#include "controllers/AppInteractionController.h"
 
 class ofApp : public ofBaseApp
 {
 private:
 	AppPresentationController mPresentationController;
-
+	AppInteractionController mInteractionController;
 public:
 	void setup();
 	void update();

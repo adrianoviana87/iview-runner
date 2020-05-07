@@ -145,6 +145,7 @@
     <ClCompile Include="src\layers\image\AppImageLayerDefBuilder.cpp" />
     <ClCompile Include="src\layers\reveal\AppRevealLayerDefBuilder.cpp" />
     <ClCompile Include="src\controllers\AppPresentationController.cpp" />
+    <ClCompile Include="src\controllers\AppInteractionController.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -375,6 +376,7 @@
     <ClInclude Include="src\layers\reveal\AppRevealLayerDefBuilder.h" />
     <ClInclude Include="src\layers\AppLayer.h" />
     <ClInclude Include="src\controllers\AppPresentationController.h" />
+    <ClInclude Include="src\controllers\AppInteractionController.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
