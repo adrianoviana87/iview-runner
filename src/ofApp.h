@@ -5,12 +5,12 @@
 #include <memory>
 #include <vector>
 
-#include "presentation/AppPresentation.h"
+#include "controllers/AppPresentationController.h"
 
 class ofApp : public ofBaseApp
 {
 private:
-	std::shared_ptr<AppPresentation> mPresentation;
+	AppPresentationController mPresentationController;
 
 public:
 	void setup();

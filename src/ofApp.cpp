@@ -9,8 +9,8 @@ using namespace std;
 void ofApp::setup()
 {
   ofEnableAlphaBlending();
-	mPresentation = appBuildPresentation("sample-data/sample-presentation.json");
-	mPresentation->setup();
+	mPresentationController.setup();
+	mPresentationController.post("sample-data/sample-presentation.json");
 }
 
 //--------------------------------------------------------------
@@ -19,17 +19,17 @@ void ofApp::update()
   if (ofGetMousePressed())
   {
     ofVec3f mousePoint(ofGetMouseX(), ofGetMouseY());
-		mPresentation->onActivated(mousePoint);
+		mPresentationController.onActivated(mousePoint);
   }
 
-	mPresentation->update();
+	mPresentationController.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw()
 {
   ofSetColor(255, 255);
-	mPresentation->draw();
+	mPresentationController.draw();
 }
 
 //--------------------------------------------------------------
