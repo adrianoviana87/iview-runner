@@ -1,0 +1,19 @@
+{
+  "display": {
+    "width": 800,
+    "height": 600
+  },
+  "communication": {
+    "globalPrefix": "",
+    "activationSources": [
+      {
+        "port": 11777,
+        "depth": false,
+        "prefix": "/oscControl",
+        "getX": "/slider2Dx",
+        "getY": "/slider2Dy",
+        "getZ":  ""
+      }
+    ]
+  }
+}
