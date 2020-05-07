@@ -6,12 +6,12 @@
     {
       "title": "background",
       "type": "image",
-      "source": "https://loremflickr.com/1024/768"
+      "source": "https://picsum.photos/1024/768"
     },
     {
       "title": "reveal",
       "type": "reveal",
-      "source": "https://loremflickr.com/1024/768"
+      "source": "https://picsum.photos/1024/768"
     }
   ]
 }

@@ -112,7 +112,18 @@
     <ClCompile Include="src\presentation\AppPresentation.cpp" />
     <ClCompile Include="src\presentation\AppPresentationBuilder.cpp" />
     <ClCompile Include="src\shared\AppGameComponent.cpp" />
-    <ClCompile Include="src\**\*.cpp" />
+    <ClCompile Include="src\controllers\AppPresentationController.cpp" />
+    <ClCompile Include="src\image-loader\AppImageLoader.cpp" />
+    <ClCompile Include="src\layers\image\AppImageLayer.cpp" />
+    <ClCompile Include="src\layers\image\AppImageLayerDefBuilder.cpp" />
+    <ClCompile Include="src\layers\reveal\AppRevealLayer.cpp" />
+    <ClCompile Include="src\layers\reveal\AppRevealLayerDefBuilder.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="src\presentation\AppPresentation.cpp" />
+    <ClCompile Include="src\presentation\AppPresentationBuilder.cpp" />
+    <ClCompile Include="src\shared\AppGameComponent.cpp" />
+    <ClCompile Include="src\shared\AppSettings.cpp" />
     <ClCompile Include="src\**\*.cpp" />
     <ClCompile Include="src\**\*.cpp" />
     <ClCompile Include="src\**\*.cpp" />
@@ -146,6 +157,7 @@
     <ClCompile Include="src\layers\reveal\AppRevealLayerDefBuilder.cpp" />
     <ClCompile Include="src\controllers\AppPresentationController.cpp" />
     <ClCompile Include="src\controllers\AppInteractionController.cpp" />
+    <ClCompile Include="src\shared\AppSettings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -352,7 +364,19 @@
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="src\presentation\AppPresentation.h" />
     <ClInclude Include="src\shared\AppGameComponent.h" />
-    <ClInclude Include="src\**\*.h" />
+    <ClInclude Include="src\controllers\AppPresentationController.h" />
+    <ClInclude Include="src\image-loader\AppImageLoader.h" />
+    <ClInclude Include="src\layers\AppLayer.h" />
+    <ClInclude Include="src\layers\image\AppImageLayer.h" />
+    <ClInclude Include="src\layers\image\AppImageLayerDef.h" />
+    <ClInclude Include="src\layers\image\AppImageLayerDefBuilder.h" />
+    <ClInclude Include="src\layers\reveal\AppRevealLayer.h" />
+    <ClInclude Include="src\layers\reveal\AppRevealLayerDef.h" />
+    <ClInclude Include="src\layers\reveal\AppRevealLayerDefBuilder.h" />
+    <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\presentation\AppPresentation.h" />
+    <ClInclude Include="src\shared\AppGameComponent.h" />
+    <ClInclude Include="src\shared\AppSettings.h" />
     <ClInclude Include="src\**\*.h" />
     <ClInclude Include="src\**\*.h" />
     <ClInclude Include="src\layers\image\AppImageLayer.h" />
@@ -377,6 +401,7 @@
     <ClInclude Include="src\layers\AppLayer.h" />
     <ClInclude Include="src\controllers\AppPresentationController.h" />
     <ClInclude Include="src\controllers\AppInteractionController.h" />
+    <ClInclude Include="src\shared\AppSettings.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
@@ -384,5 +409,6 @@
   <ItemGroup>
     <None Include="sample-data\sample-presentation.json" />
     <None Include=".editorconfig" />
+    <None Include="bin\data\settings.json" />
   </ItemGroup>
 </Project>

@@ -5,13 +5,24 @@
 
 using namespace std;
 
+ofApp::ofApp(const AppSettings& settings)
+	:mAppSettings(settings)
+{
+
+}
+
 //--------------------------------------------------------------
 void ofApp::setup()
 {
   ofEnableAlphaBlending();
+	for (int i = 0; i < mAppSettings.communication.activationSources.size(); ++i)
+	{
+		mInteractionControllers.emplace_back(mAppSettings.communication, i);
+		mInteractionControllers.back().setup();
+	}
+
 	mPresentationController.setup();
 	mPresentationController.post("sample-data/sample-presentation.json");
-	mInteractionController.setup();
 }
 
 //--------------------------------------------------------------
@@ -23,10 +34,13 @@ void ofApp::update()
 		mPresentationController.onActivated(mousePoint);
   }
 
-	auto points = mInteractionController.getPoints();
-	for (auto& point : points)
+	for (auto& interactionController : mInteractionControllers)
 	{
-		mPresentationController.onActivated(point);
+		auto points = interactionController.getPoints();
+		for (auto& point : points)
+		{
+			mPresentationController.onActivated(point);
+		}
 	}
 
 	mPresentationController.update();

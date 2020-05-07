@@ -8,12 +8,16 @@
 #include "controllers/AppPresentationController.h"
 #include "controllers/AppInteractionController.h"
 
+#include "shared/AppSettings.h"
+
 class ofApp : public ofBaseApp
 {
 private:
 	AppPresentationController mPresentationController;
-	AppInteractionController mInteractionController;
+	std::vector<AppInteractionController> mInteractionControllers;
+	AppSettings mAppSettings;
 public:
+	ofApp(const AppSettings& settings);
 	void setup();
 	void update();
 	void draw();
